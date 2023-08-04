@@ -12,14 +12,14 @@ Functionalities include:
 
 **Start** 
 
-First of all navigate to both /server and /client files and run npm install on both of them.
+First of all navigate to both /server and /client files and run `npm install` on both of them.
 To start the server navigate to /server run:
 
-npm run dev
+`npm run dev`
 
 To start the app navigate to /client run:
 
-npm run dev
+`npm run dev`
 
 The app should run on http://localhost/5173/
 
