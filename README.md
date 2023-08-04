@@ -2,7 +2,7 @@
 
 This is a fullstack app. Frontend is made with Vite, Vue, Vuex, Vue-router, CSS and tested with Vue-test-utils and vitest. 
 Backend is made with Express.js and socket.io, documented with swagger, tested with mocha, chai, sinon and rewire.
-SQLite is used as a database.
+SQLite is used as a database. Postman collections are included for testing the API.
 Functionalities include:
 - Pagination for posts and authors
 - Search for posts
