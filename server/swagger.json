@@ -1,0 +1,858 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Title",
+        "version": "1.0.0",
+        "description": "Your API Description"
+    },
+    "host": "localhost:5000",
+    "basePath": "/docs",
+    "schemes": [
+        "http",
+        "https"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "ApiKeyAuth": {
+            "type": "apiKey",
+            "in": "headers",
+            "name": "authorization"
+        }
+    },
+    "components": {
+        "schemas": {
+            "getAuthorAndPosts": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The author ID.",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The author's name.",
+                        "example": "John"
+                    },
+                    "surname": {
+                        "type": "string",
+                        "description": "The author's surname.",
+                        "example": "Jones"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The author's creation date.",
+                        "example": "7/27/2023, 12:46:06 PM"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The author's update date.",
+                        "example": "7/27/2023, 12:48:06 PM"
+                    },
+                    "posts": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer",
+                                    "description": "The post ID.",
+                                    "example": 1
+                                },
+                                "title": {
+                                    "type": "string",
+                                    "description": "The post title.",
+                                    "example": "New post"
+                                },
+                                "body": {
+                                    "type": "string",
+                                    "description": "The post body.",
+                                    "example": "New post body"
+                                },
+                                "author_id": {
+                                    "type": "integer",
+                                    "description": "The post author ID.",
+                                    "example": 1
+                                },
+                                "created_at": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "description": "The post creation date.",
+                                    "example": "7/27/2023, 12:46:06 PM"
+                                },
+                                "updated_at": {
+                                    "type": "string",
+                                    "format": "date",
+                                    "description": "The post update date.",
+                                    "example": "7/27/2023, 12:48:06 PM"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "getAuthorsAndPosts": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "type": "integer",
+                            "description": "The author ID.",
+                            "example": 1
+                        },
+                        "name": {
+                            "type": "string",
+                            "description": "The author's name.",
+                            "example": "John"
+                        },
+                        "surname": {
+                            "type": "string",
+                            "description": "The author's surname.",
+                            "example": "Jones"
+                        },
+                        "created_at": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "The author's creation date.",
+                            "example": "7/27/2023, 12:46:06 PM"
+                        },
+                        "updated_at": {
+                            "type": "string",
+                            "format": "date",
+                            "description": "The author's update date.",
+                            "example": "7/27/2023, 12:48:06 PM"
+                        },
+                        "posts": {
+                            "type": "array",
+                            "items": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer",
+                                        "description": "The post ID.",
+                                        "example": 1
+                                    },
+                                    "title": {
+                                        "type": "string",
+                                        "description": "The post title.",
+                                        "example": "New post"
+                                    },
+                                    "body": {
+                                        "type": "string",
+                                        "description": "The post body.",
+                                        "example": "New post body"
+                                    },
+                                    "author_id": {
+                                        "type": "integer",
+                                        "description": "The post author ID.",
+                                        "example": 1
+                                    },
+                                    "created_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The post creation date.",
+                                        "example": "7/27/2023, 12:46:06 PM"
+                                    },
+                                    "updated_at": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "description": "The post update date.",
+                                        "example": "7/27/2023, 12:48:06 PM"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "getAuthor": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The author ID.",
+                        "example": 1
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "The author's name.",
+                        "example": "John"
+                    },
+                    "surname": {
+                        "type": "string",
+                        "description": "The author's surname.",
+                        "example": "Jones"
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The author's creation date.",
+                        "example": "7/27/2023, 12:46:06 PM"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The author's update date.",
+                        "example": "7/27/2023, 12:48:06 PM"
+                    }
+                }
+            },
+            "postAuthor": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The author's name.",
+                        "example": "John"
+                    },
+                    "surname": {
+                        "type": "string",
+                        "description": "The author's surname.",
+                        "example": "Jones"
+                    }
+                }
+            },
+            "editAuthor": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string",
+                        "description": "The author's name.",
+                        "example": "John"
+                    },
+                    "surname": {
+                        "type": "string",
+                        "description": "The author's surname.",
+                        "example": "Jones"
+                    }
+                }
+            },
+            "getPostAndAuthor": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The post ID.",
+                        "example": 1
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The post title.",
+                        "example": "New post"
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The post body.",
+                        "example": "New post body"
+                    },
+                    "author_id": {
+                        "type": "integer",
+                        "description": "The post author ID.",
+                        "example": 1
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The post creation date.",
+                        "example": "7/27/2023, 12:46:06 PM"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The post update date.",
+                        "example": "7/27/2023, 12:48:06 PM"
+                    },
+                    "author": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer",
+                                "description": "The author ID.",
+                                "example": 1
+                            },
+                            "name": {
+                                "type": "string",
+                                "description": "The author's name.",
+                                "example": "John"
+                            },
+                            "surname": {
+                                "type": "string",
+                                "description": "The author's surname.",
+                                "example": "Jones"
+                            },
+                            "created_at": {
+                                "type": "string",
+                                "format": "date",
+                                "description": "The author's creation date.",
+                                "example": "7/27/2023, 12:46:06 PM"
+                            },
+                            "updated_at": {
+                                "type": "string",
+                                "format": "date",
+                                "description": "The author's update date.",
+                                "example": "7/27/2023, 12:48:06 PM"
+                            }
+                        }
+                    }
+                }
+            },
+            "getPost": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "integer",
+                        "description": "The post ID.",
+                        "example": 1
+                    },
+                    "title": {
+                        "type": "string",
+                        "description": "The post title.",
+                        "example": "New post"
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The post body.",
+                        "example": "New post body"
+                    },
+                    "author_id": {
+                        "type": "integer",
+                        "description": "The post author ID.",
+                        "example": 1
+                    },
+                    "created_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The post creation date.",
+                        "example": "7/27/2023, 12:46:06 PM"
+                    },
+                    "updated_at": {
+                        "type": "string",
+                        "format": "date",
+                        "description": "The post update date.",
+                        "example": "7/27/2023, 12:48:06 PM"
+                    }
+                }
+            },
+            "postPost": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "The post title.",
+                        "example": "New post"
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The post body.",
+                        "example": "New post body"
+                    },
+                    "author_id": {
+                        "type": "integer",
+                        "description": "The post author ID.",
+                        "example": 1
+                    }
+                }
+            },
+            "editPost": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "The post title.",
+                        "example": "Newer post"
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "The post body.",
+                        "example": "Newer post"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Authors",
+            "description": "The authors managing API"
+        }
+    ],
+    "paths": {
+        "/api/authors": {
+            "get": {
+                "summary": "Lists all the authors",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "allowReserved": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "per_page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "allowReserved": true
+                    }
+                ],
+                "tags": [
+                    "Authors"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The list of the authors",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getAuthor"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/authors/posts": {
+            "get": {
+                "summary": "Lists all the authors and their posts",
+                "tags": [
+                    "Authors"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The list of the authors and their posts",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getAuthorsAndPosts"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new author",
+                "tags": [
+                    "Authors"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/postAuthor"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The author was created."
+                    },
+                    "500": {
+                        "description": "Some server error"
+                    }
+                }
+            }
+        },
+        "/api/authors/{id}": {
+            "get": {
+                "summary": "Get the author by ID",
+                "tags": [
+                    "Authors"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The author ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The author response by ID",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/getAuthor"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The author was not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update the author by ID",
+                "tags": [
+                    "Authors"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The author ID"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/editAuthor"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The author was updated"
+                    },
+                    "404": {
+                        "description": "The author was not found"
+                    },
+                    "500": {
+                        "description": "Some server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Remove the author by ID",
+                "tags": [
+                    "Authors"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The author ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The author was deleted"
+                    },
+                    "404": {
+                        "description": "The author was not found"
+                    },
+                    "500": {
+                        "description": "Some server error"
+                    }
+                }
+            }
+        },
+        "/api/authors/{id}/posts": {
+            "get": {
+                "summary": "Get the author by ID and all their posts",
+                "tags": [
+                    "Authors"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The author ID"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The author response by ID and all their posts",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/getAuthorAndPosts"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The author was not found"
+                    }
+                }
+            }
+        },
+        "/api/posts": {
+            "get": {
+                "summary": "Lists all the posts",
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "allowReserved": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "per_page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "allowReserved": true
+                    },
+                    {
+                        "in": "query",
+                        "name": "search",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "allowReserved": true
+                    }
+                ],
+                "tags": [
+                    "Posts"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The list of the posts",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getPost"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The posts were not found"
+                    },
+                    "500": {
+                        "description": "Failed to fetch posts"
+                    }
+                }
+            }
+        },
+        "/api/posts/authors": {
+            "get": {
+                "summary": "Lists all the posts and their authors",
+                "tags": [
+                    "Posts"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The list of the posts and their authors",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/getPostAndAuthor"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The post was not found"
+                    },
+                    "500": {
+                        "description": "Failed to fetch post"
+                    }
+                }
+            },
+            "post": {
+                "summary": "Create a new post",
+                "tags": [
+                    "Posts"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/postPost"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The post was created."
+                    },
+                    "500": {
+                        "description": "Some server error"
+                    }
+                }
+            }
+        },
+        "/api/posts/{id}": {
+            "get": {
+                "summary": "Get the post by id",
+                "tags": [
+                    "Posts"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The post"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The post response by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/getPost"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The post was not found"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update the post by the id",
+                "tags": [
+                    "Posts"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The post id"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/editPost"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "The post was updated"
+                    },
+                    "404": {
+                        "description": "The post was not found"
+                    },
+                    "500": {
+                        "description": "Some server error"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Remove the post by id",
+                "tags": [
+                    "Posts"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The post id"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The post was deleted"
+                    },
+                    "404": {
+                        "description": "The post was not found"
+                    },
+                    "500": {
+                        "description": "Some server error"
+                    }
+                }
+            }
+        },
+        "/api/posts/{id}/authors": {
+            "get": {
+                "summary": "Get the post and it's author by id",
+                "tags": [
+                    "Posts"
+                ],
+                "parameters": [
+                    {
+                        "in": "path",
+                        "name": "id",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "required": true,
+                        "description": "The post"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "The post and author response by id",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/getPostAndAuthor"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "The post was not found"
+                    }
+                }
+            }
+        }
+    }
+}
