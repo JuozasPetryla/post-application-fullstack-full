@@ -22,7 +22,7 @@ npm run test
 
 The documentation can be accessed in the swagger.json file, or by running the server and opening:
 
-http://localhost5000/docs
+http://localhost:3000/docs
 
 
 

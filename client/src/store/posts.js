@@ -47,11 +47,10 @@ const actions = {
     async getPostsWithAuthors({ commit, _, rootState }) {
         try {
             const posts = await this.getPostsWithAuthors(rootState.pagination.currentPage)
-
             if (posts.response) {
                 throw new Error(posts.response.statusText)
             }
-            commit('setTotalPosts', posts.totalPost)
+            commit('setTotalPosts', posts.totalPosts)
             commit('setPages', posts.totalPages, { root: true })
             commit('setCurrentPage', posts.currentPage, { root: true })
             commit('setPostsWithAuthors', posts.posts)

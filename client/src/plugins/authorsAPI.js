@@ -14,7 +14,7 @@ const authorsAPI = store => {
             return err
         }
     }
-    store.getAuthorsWithPosts = async function (page) {
+    store.getAuthorsWithPosts = async function (totalAuthors) {
         try {
             const response = await this.http.get(`/authors/posts?page=1&per_page=15`)
             if (response.status === 404) {

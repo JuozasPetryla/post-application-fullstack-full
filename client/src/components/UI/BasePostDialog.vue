@@ -27,10 +27,11 @@
             v-model="authorObj"
             :class="{ invalid: !authorIsValid }"
             @focusout="validateAuthor"
+            size="4"
           >
             <option
               class="select-options"
-              v-for="author in authors"
+              v-for="author in authorsWithPosts"
               :key="author.id"
               :value="{
                 name: author.name,
@@ -91,7 +92,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["authors", "formMode", "editId"]),
+    ...mapGetters(["authors", "authorsWithPosts", "formMode", "editId"]),
   },
   methods: {
     ...mapActions([
@@ -99,6 +100,7 @@ export default {
       "createNewPost",
       "editPost",
       "getPostsWithAuthors",
+      "getAuthorsWithPosts",
     ]),
     formSubmit() {
       if (!this.formIsValid) return;
@@ -166,6 +168,9 @@ export default {
       }
     },
   },
+  created() {
+    this.getAuthorsWithPosts();
+  },
 };
 </script>
 
@@ -192,15 +197,15 @@ header {
 dialog {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   position: absolute;
   top: 25%;
   width: 27.5rem;
-  height: 20rem;
+  height: 25rem;
   z-index: 1;
   padding: 0;
   border: none;
+  gap: 2.4rem;
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
 }
 

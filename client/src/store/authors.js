@@ -41,9 +41,9 @@ const actions = {
             commit('setTotalAuthors', 0)
         }
     },
-    async getAuthorsWithPosts({ commit, _, rootState }) {
+    async getAuthorsWithPosts({ commit, state }) {
         try {
-            const authors = await this.getAuthorsWithPosts(rootState.pagination.currentPage)
+            const authors = await this.getAuthorsWithPosts(state.totalAuthors)
             if (authors.response) {
                 throw new Error(authors.response.statusText)
             }

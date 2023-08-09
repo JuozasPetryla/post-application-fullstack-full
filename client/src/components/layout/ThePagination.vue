@@ -22,9 +22,8 @@ export default {
     ...mapGetters(["pages", "curPage"]),
   },
   methods: {
-    ...mapActions(["getCurrentPage", "getPostsWithAuthors"]),
+    ...mapActions(["getCurrentPage"]),
   },
-
 };
 </script>
 

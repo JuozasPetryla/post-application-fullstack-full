@@ -12,31 +12,31 @@ export default function createWebSocketPlugin() {
     return store => {
         socket.on('newPost', data => {
             store.dispatch('openNotification');
-            store.dispatch('getNotificationText', `A post with the id of ${data.id} was created`);
+            store.dispatch('getNotificationText', `A post with the id of ${data} was created`);
         });
 
         socket.on('updatedPost', data => {
             store.dispatch('openNotification');
-            store.dispatch('getNotificationText', `A post with the id of ${data.id} was edited`);
+            store.dispatch('getNotificationText', `A post with the id of ${data} was edited`);
         });
 
         socket.on('deletePost', data => {
             store.dispatch('openNotification');
-            store.dispatch('getNotificationText', `A post with the id of ${data.id} was deleted`);
+            store.dispatch('getNotificationText', `A post with the id of ${data} was deleted`);
         });
         socket.on('newAuthor', data => {
             store.dispatch('openNotification');
-            store.dispatch('getNotificationText', `An author with the id of ${data.id} was created`);
+            store.dispatch('getNotificationText', `An author with the id of ${data} was created`);
         });
 
         socket.on('updatedAuthor', data => {
             store.dispatch('openNotification');
-            store.dispatch('getNotificationText', `An author with the id of ${data.id} was edited`);
+            store.dispatch('getNotificationText', `An author with the id of ${data} was edited`);
         });
 
         socket.on('deleteAuthor', data => {
             store.dispatch('openNotification');
-            store.dispatch('getNotificationText', `An author with the id of ${data.id} and all his posts were was deleted`);
+            store.dispatch('getNotificationText', `An author with the id of ${data} and all his posts were was deleted`);
         });
     };
 }
