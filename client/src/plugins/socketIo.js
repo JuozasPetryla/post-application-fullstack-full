@@ -1,12 +1,10 @@
 import io from "socket.io-client";
 
-const defaultWebSocketURL =
-  "https://post-application-f823a2a81cb3.herokuapp.com/";
-
 function createSocket(url) {
-  return io(url || defaultWebSocketURL, { transports: ["websocket"] });
+  return io(url || "https://post-application-f823a2a81cb3.herokuapp.com/", {
+    transports: ["websocket"],
+  });
 }
-
 let socket = createSocket();
 
 export default function createWebSocketPlugin() {
