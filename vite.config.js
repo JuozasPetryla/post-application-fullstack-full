@@ -9,7 +9,7 @@ export default defineConfig({
   },
   define: {
     SERVER_ADDR: JSON.stringify(
-      "https://post-application-f823a2a81cb3.herokuapp.com/"
+      "https://post-application-f823a2a81cb3.herokuapp.com"
     ),
     POSTS_PER_PAGE: 4,
   },
