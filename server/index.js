@@ -14,7 +14,10 @@ require("dotenv").config();
 socketIo.attach(server);
 
 const corsOptions = {
-  origin: ["http://localhost:5173", "http://localhost:3000"],
+  origin: [
+    "https://post-application-full.netlify.app/",
+    "http://localhost:3000",
+  ],
   credentials: true,
   optionSuccessStatus: 200,
 };
