@@ -1,39 +1,39 @@
-const express = require('express')
-const app = express()
+const express = require("express");
+const app = express();
 
-const swaggerUi = require("swagger-ui-express")
-const swaggerDocument = require('./swagger.json')
+const swaggerUi = require("swagger-ui-express");
+const swaggerDocument = require("./swagger.json");
 
-const http = require('http');
-const socketIo = require('./socket');
+const http = require("http");
+const socketIo = require("./socket");
 const server = http.createServer(app);
-const cors = require('cors');
+const cors = require("cors");
+
+require("dotenv").config();
 
 socketIo.attach(server);
 
-
 const corsOptions = {
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
-    credentials: true,            //access-control-allow-credentials:true
-    optionSuccessStatus: 200
-}
+  origin: ["http://localhost:5173", "http://localhost:3000"],
+  credentials: true,
+  optionSuccessStatus: 200,
+};
 
 app.use(cors(corsOptions));
 
-
 // Body parser
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 // Authors API route
-app.use('/api', require('./routes/authors'))
-app.use('/api', require('./routes/posts'))
+app.use("/api", require("./routes/authors"));
+app.use("/api", require("./routes/posts"));
 
 // Use Swagger
-app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
+app.use("/docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const PORT = process.env.PORT || 3000;
 
-server.listen(PORT, () => console.log(`Server started on port ${PORT}`))
+server.listen(PORT, () => console.log(`Server started on port ${PORT}`));
 
-module.exports = app
+module.exports = app;
