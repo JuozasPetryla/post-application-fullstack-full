@@ -1,8 +1,14 @@
 # post-application-fullstack-full
 
-This is a fullstack app. Frontend is made with Vite, Vue, Vuex, Vue-router, CSS and tested with Vue-test-utils and vitest. 
-Backend is made with Express.js and socket.io, documented with swagger, tested with mocha, chai, sinon and rewire.
-SQLite is used as a database. Postman collections are included for testing the API.
+Visit the post application here ➡️ https://post-application-full.netlify.app/
+
+This is a fullstack app.
+
+✔️ Frontend is build with Vite, made with, Vue, Vuex, Vue-router, CSS, hosted on Netlify and tested with Vue-test-utils and vitest. 
+✔️ Backend is made with Express.js and socket.io, hosted on Heroku, documented with swagger, tested with mocha, chai, sinon and rewire. 
+✔️ Database is hosted on ElephantSQL as a Postgresql database and a Sequelize ORM is used for it. 
+✔️ Postman collections are included for testing the API.
+
 Functionalities include:
 - Pagination for posts and authors
 - Search for posts
