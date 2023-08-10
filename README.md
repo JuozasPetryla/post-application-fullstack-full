@@ -24,6 +24,4 @@ npm run test
 
 **Documentation** 
 
-The documentation can be accessed in the swagger.json file, or by running the server and opening:
-
-http://localhost/3000/docs
+The documentation can be accessed in the swagger.json file.
