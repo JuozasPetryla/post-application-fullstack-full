@@ -16,7 +16,7 @@ socketIo.attach(server);
 const corsOptions = {
   origin: [
     "https://post-application-full.netlify.app/",
-    "http://localhost:3000",
+    "https://post-application-f823a2a81cb3.herokuapp.com/",
   ],
   credentials: true,
   optionSuccessStatus: 200,
