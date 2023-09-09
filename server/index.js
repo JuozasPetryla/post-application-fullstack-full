@@ -14,10 +14,7 @@ require("dotenv").config();
 socketIo.attach(server);
 
 const corsOptions = {
-  origin: [
-    "https://post-application-full.netlify.app",
-    "https://post-application-f823a2a81cb3.herokuapp.com",
-  ],
+  origin: ["https://post-application-full.netlify.app"],
   credentials: true,
   optionSuccessStatus: 200,
 };
