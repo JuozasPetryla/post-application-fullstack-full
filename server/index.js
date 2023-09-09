@@ -14,7 +14,10 @@ require("dotenv").config();
 socketIo.attach(server);
 
 const corsOptions = {
-  origin: ["https://post-application-full.netlify.app"],
+  origin: [
+    "https://post-application-full.netlify.app",
+    "https://post-application.onrender.com",
+  ],
   credentials: true,
   optionSuccessStatus: 200,
 };
