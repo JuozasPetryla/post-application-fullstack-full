@@ -8,9 +8,7 @@ export default defineConfig({
     environment: "jsdom",
   },
   define: {
-    SERVER_ADDR: JSON.stringify(
-      "https://post-application-f823a2a81cb3.herokuapp.com"
-    ),
+    SERVER_ADDR: JSON.stringify("https://post-application.onrender.com"),
     POSTS_PER_PAGE: 4,
   },
 });

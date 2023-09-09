@@ -1,7 +1,7 @@
 import io from "socket.io-client";
 
 function createSocket(url) {
-  return io(url || "https://post-application-f823a2a81cb3.herokuapp.com/", {
+  return io(url || "https://post-application.onrender.com/", {
     transports: ["websocket"],
   });
 }
